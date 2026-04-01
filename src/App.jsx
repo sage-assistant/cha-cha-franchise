@@ -1,50 +1,57 @@
 import './App.css'
 
-const menuItems = [
+const featuredTiles = [
   {
-    title: 'Ceremonial Matcha Latte',
-    text: 'Stone ground Japanese matcha, silky milk, and a clean finish that keeps people coming back.',
+    title: 'Aviral demand for matcha',
+    text: 'Cha Cha Matcha built an instantly recognizable identity around premium tea, playful energy, and a format designed to travel.',
   },
   {
-    title: 'Strawberry Matcha Cloud',
-    text: 'A layered signature drink with fruit, cream, and vibrant color built for shareability.',
-  },
-  {
-    title: 'Yuzu Sparkling Tea',
-    text: 'Bright citrus and tea over sparkling water for a refreshing all day option.',
+    title: 'Designed for modern retail',
+    text: 'The concept is clean, visual, and efficient, with a footprint and workflow that can flex for multiple markets.',
   },
 ]
 
-const reasons = [
-  'Premium matcha drinks with high visual appeal',
-  'Compact operational model with strong throughput',
-  'Flexible kiosk, inline, and flagship footprints',
-  'Social first brand language that earns attention fast',
+const drinks = [
+  {
+    title: 'Ceremonial Matcha',
+    subtitle: 'Core hero beverage',
+    theme: 'matcha',
+  },
+  {
+    title: 'Strawberry Cloud',
+    subtitle: 'Signature layered drink',
+    theme: 'strawberry',
+  },
+  {
+    title: 'Soft Serve Float',
+    subtitle: 'Dessert led traffic driver',
+    theme: 'cream',
+  },
 ]
 
-const steps = [
+const franchiseCards = [
   {
     number: '01',
-    title: 'Discover the concept',
-    text: 'Review the model, unit economics, and launch roadmap with the franchise team.',
+    title: 'Brand heat',
+    text: 'A visually distinct concept that earns attention quickly across packaging, interiors, and social channels.',
   },
   {
     number: '02',
-    title: 'Secure your territory',
-    text: 'Choose the market, footprint, and format that best matches your growth plan.',
+    title: 'Simple menu',
+    text: 'Focused beverage and dessert offerings that feel premium without becoming operationally messy.',
   },
   {
     number: '03',
-    title: 'Launch with support',
-    text: 'Open with training, systems, marketing guidance, and an operational playbook.',
+    title: 'Expansion ready',
+    text: 'A format built to scale into new neighborhoods, mall footprints, and destination retail corridors.',
   },
 ]
 
 const stats = [
-  ['Designed for', 'High traffic retail corridors'],
-  ['Format options', 'Kiosk, inline, flagship'],
-  ['Brand focus', 'Premium matcha and tea based drinks'],
-  ['Ideal operator', 'Hands on owner or multi unit group'],
+  ['Category', 'Premium matcha and tea retail'],
+  ['Formats', 'Inline, kiosk, flagship'],
+  ['Design language', 'Playful, polished, editorial'],
+  ['Audience', 'Trend aware urban consumers'],
 ]
 
 function App() {
@@ -52,117 +59,103 @@ function App() {
     <div className="page-shell">
       <header className="topbar">
         <div className="brand-lockup">
-          <div className="brand-mark">Cha</div>
-          <div className="brand-copy">
-            <span className="brand-name">Cha Cha Matcha</span>
-            <span className="brand-sub">Franchise opportunities</span>
-          </div>
+          <div className="brand-badge">Cha Cha</div>
+          <span className="brand-label">Franchise</span>
         </div>
         <nav className="nav-links">
           <a href="#story">Story</a>
-          <a href="#menu">Menu</a>
-          <a href="#franchise">Franchise</a>
+          <a href="#drinks">Drinks</a>
+          <a href="#model">Model</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="pill-button dark" href="#contact">Request info</a>
+        <a className="pill-button dark" href="#contact">Inquire now</a>
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-copy">
-            <p className="eyebrow">A franchise brand with real visual gravity</p>
-            <h1>Bring a premium matcha concept to your market.</h1>
-            <p className="hero-text">
-              Built around unmistakable branding, high margin beverage moments, and a store experience that
-              feels instantly current.
-            </p>
-            <div className="hero-actions">
-              <a className="pill-button dark" href="#contact">Book a franchise call</a>
-              <a className="pill-button light" href="#franchise">View the model</a>
-            </div>
-          </div>
-
-          <div className="hero-visual">
-            <div className="drink-card main-drink">
-              <div className="cup cup-large">
-                <div className="liquid liquid-matcha"></div>
-                <div className="foam"></div>
-                <div className="straw"></div>
+        <section className="hero-panel">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <p className="eyebrow">Cha Cha Matcha franchise</p>
+              <h1>A premium matcha concept with cult brand energy.</h1>
+              <p className="hero-text">
+                Built for founders and operators who want a visually iconic food and beverage brand with real presence, clear positioning, and expansion potential.
+              </p>
+              <div className="hero-actions">
+                <a className="pill-button dark" href="#contact">Get franchise deck</a>
+                <a className="pill-button soft" href="#model">View opportunity</a>
               </div>
             </div>
-            <div className="floating-card top-note">
-              <span>Fresh design</span>
-              <strong>Built for social discovery</strong>
-            </div>
-            <div className="floating-card bottom-note">
-              <span>Flexible footprint</span>
-              <strong>From compact kiosks to destination stores</strong>
-            </div>
-          </div>
-        </section>
 
-        <section className="split-section blush" id="story">
-          <div className="image-panel collage">
-            <div className="mini-drink strawberry"></div>
-            <div className="mini-drink matcha"></div>
-            <div className="mini-drink cream"></div>
-          </div>
-          <div className="text-panel">
-            <p className="eyebrow">Why this brand travels well</p>
-            <h2>Distinctive drinks, recognizable aesthetics, repeatable operations.</h2>
-            <p>
-              The strongest food and beverage franchises are more than menus. They are systems wrapped in a
-              brand people remember. This concept combines premium matcha positioning with a visual identity
-              that reads instantly across storefronts, packaging, and digital channels.
-            </p>
-            <ul className="reason-list">
-              {reasons.map((reason) => (
-                <li key={reason}>{reason}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="menu-section" id="menu">
-          <div className="section-heading centered">
-            <p className="eyebrow">Signature lineup</p>
-            <h2>Drinks that look premium before the first sip.</h2>
-          </div>
-          <div className="menu-grid">
-            {menuItems.map((item, index) => (
-              <article className="menu-card" key={item.title}>
-                <div className={`menu-image variant-${index + 1}`}>
-                  <div className="cup">
-                    <div className={`liquid ${index === 0 ? 'liquid-matcha' : index === 1 ? 'liquid-strawberry' : 'liquid-yuzu'}`}></div>
+            <div className="hero-visual">
+              <div className="hero-card hero-card-back"></div>
+              <div className="hero-card hero-card-front">
+                <div className="hero-image-frame">
+                  <div className="hero-blob hero-blob-one"></div>
+                  <div className="hero-blob hero-blob-two"></div>
+                  <div className="cup-stack large matcha">
                     <div className="foam"></div>
+                    <div className="straw"></div>
                   </div>
                 </div>
-                <div className="menu-copy">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="content-grid" id="story">
+          <article className="story-card story-main">
+            <div className="story-main-copy">
+              <p className="eyebrow">Brand premise</p>
+              <h2>Fresh, social, and unmistakably green.</h2>
+              <p>
+                The page leans into a fashion aware, editorial look. Big serif headlines, soft cream space, rounded containers, and product imagery do most of the work.
+              </p>
+            </div>
+            <div className="story-main-visual">
+              <div className="mini-scene pink-scene">
+                <div className="cup-stack strawberry small"></div>
+              </div>
+            </div>
+          </article>
+
+          <div className="story-side-stack">
+            {featuredTiles.map((tile) => (
+              <article className="story-card story-side" key={tile.title}>
+                <h3>{tile.title}</h3>
+                <p>{tile.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="drinks-section" id="drinks">
+          <div className="section-heading center">
+            <p className="eyebrow">Signature drinks</p>
+            <h2>Product moments designed to feel shareable and premium.</h2>
+          </div>
+          <div className="drinks-grid">
+            {drinks.map((drink) => (
+              <article className={`drink-tile ${drink.theme}`} key={drink.title}>
+                <div className={`drink-scene ${drink.theme}`}>
+                  <div className={`cup-stack ${drink.theme}`}></div>
+                </div>
+                <div className="drink-copy">
+                  <p>{drink.subtitle}</p>
+                  <h3>{drink.title}</h3>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="franchise-section" id="franchise">
-          <div className="section-heading">
-            <p className="eyebrow">Franchise pathway</p>
-            <h2>A concept that balances brand heat with operational clarity.</h2>
-          </div>
-          <div className="franchise-grid">
-            <div className="process-cards">
-              {steps.map((step) => (
-                <article className="process-card" key={step.number}>
-                  <span>{step.number}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
-              ))}
-            </div>
-            <div className="info-card">
-              <p className="eyebrow dark-text">At a glance</p>
+        <section className="model-section" id="model">
+          <div className="model-grid">
+            <div className="model-copy-card">
+              <p className="eyebrow">Why it works</p>
+              <h2>An aesthetic brand with a simple operating story.</h2>
+              <p>
+                The design language suggests a franchise pitch built around desirability first, then operational clarity. It feels less like a restaurant deck and more like a premium consumer brand launch.
+              </p>
               <div className="stat-list">
                 {stats.map(([label, value]) => (
                   <div className="stat-row" key={label}>
@@ -172,15 +165,25 @@ function App() {
                 ))}
               </div>
             </div>
+
+            <div className="franchise-stack">
+              {franchiseCards.map((card) => (
+                <article className="franchise-card" key={card.number}>
+                  <span>{card.number}</span>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="cta-band" id="contact">
+        <section className="cta-panel" id="contact">
           <div>
             <p className="eyebrow">Next step</p>
-            <h2>See the full opportunity, then decide if it deserves a market near you.</h2>
+            <h2>Request the franchise package and review the opportunity in detail.</h2>
           </div>
-          <a className="pill-button dark large" href="mailto:franchise@chachamatcha.com">Request franchise materials</a>
+          <a className="pill-button dark large" href="mailto:franchise@chachamatcha.com">Request materials</a>
         </section>
       </main>
     </div>
