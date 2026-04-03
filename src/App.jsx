@@ -1,190 +1,206 @@
 import './App.css'
 
-const featuredTiles = [
-  {
-    title: 'Aviral demand for matcha',
-    text: 'Cha Cha Matcha built an instantly recognizable identity around premium tea, playful energy, and a format designed to travel.',
-  },
-  {
-    title: 'Designed for modern retail',
-    text: 'The concept is clean, visual, and efficient, with a footprint and workflow that can flex for multiple markets.',
-  },
-]
+import aboutPhoto from './assets/about-photo.png'
+import expEarly from './assets/exp-early.png'
+import expMission from './assets/exp-mission.png'
+import expRitual from './assets/exp-ritual.png'
+import footerLogo from './assets/footer-logo.png'
+import heroPhoto from './assets/hero-photo.png'
+import mapImage from './assets/map.png'
+import partnerPhoto from './assets/partner-photo.png'
 
-const drinks = [
+const experienceCards = [
   {
-    title: 'Ceremonial Matcha',
-    subtitle: 'Core hero beverage',
-    theme: 'matcha',
+    title: 'Early to Matcha',
+    body: 'We introduced premium Japanese matcha to our cafes in 2016 before it was mainstream.',
+    image: expEarly,
   },
   {
-    title: 'Strawberry Cloud',
-    subtitle: 'Signature layered drink',
-    theme: 'strawberry',
+    title: 'The Ritual',
+    body: 'Cha Cha is built around daily ritual. We focus on details that bring guests back consistently.',
+    image: expRitual,
   },
   {
-    title: 'Soft Serve Float',
-    subtitle: 'Dessert led traffic driver',
-    theme: 'cream',
-  },
-]
-
-const franchiseCards = [
-  {
-    number: '01',
-    title: 'Brand heat',
-    text: 'A visually distinct concept that earns attention quickly across packaging, interiors, and social channels.',
-  },
-  {
-    number: '02',
-    title: 'Simple menu',
-    text: 'Focused beverage and dessert offerings that feel premium without becoming operationally messy.',
-  },
-  {
-    number: '03',
-    title: 'Expansion ready',
-    text: 'A format built to scale into new neighborhoods, mall footprints, and destination retail corridors.',
+    title: 'Our Mission',
+    body: 'Do fewer things better, and build a trusted brand through consistency, craft, and care.',
+    image: expMission,
   },
 ]
 
 const stats = [
-  ['Category', 'Premium matcha and tea retail'],
-  ['Formats', 'Inline, kiosk, flagship'],
-  ['Design language', 'Playful, polished, editorial'],
-  ['Audience', 'Trend aware urban consumers'],
+  ['10M+', 'Drinks served'],
+  ['200+', 'Team members'],
+  ['18+', 'Markets active'],
+  ['10+', 'Years growing'],
+]
+
+const processCards = [
+  {
+    title: '1. Intro to Cha Cha',
+    text: 'Start with a shared introduction to brand standards, operating mindset, and expectations.',
+  },
+  {
+    title: '2. Introductory Conversation',
+    text: 'We review your background, market, and goals while aligning on long-term fit.',
+  },
+  {
+    title: '3. Location and Market Alignment',
+    text: 'Our team works with partners on market selection and site strategy.',
+  },
+  {
+    title: '4. Discovery and Planning',
+    text: 'Build your launch plan with clear milestones, resources, and support structures.',
+  },
+  {
+    title: '5. Build and Open',
+    text: 'Execute a focused launch process from layout and flow to opening readiness.',
+  },
 ]
 
 function App() {
   return (
-    <div className="page-shell">
-      <header className="topbar">
-        <div className="brand-lockup">
-          <div className="brand-badge">Cha Cha</div>
-          <span className="brand-label">Franchise</span>
-        </div>
-        <nav className="nav-links">
-          <a href="#story">Story</a>
-          <a href="#drinks">Drinks</a>
-          <a href="#model">Model</a>
-          <a href="#contact">Contact</a>
+    <div className="page">
+      <main className="site">
+        <section className="hero" id="top">
+          <img className="hero-photo" src={heroPhoto} alt="Cha Cha storefront" />
+          <div className="hero-overlay" />
+          <div className="hero-content">
+            <h1>Grow With Us</h1>
+            <p>
+              Cha Cha Matcha was built around a simple idea: make exceptional matcha part of
+              people&apos;s everyday ritual.
+            </p>
+            <a className="button light" href="#apply">Apply now</a>
+          </div>
+        </section>
+
+        <section className="mission-strip">
+          We are growing thoughtfully and partnering with operators who care about quality,
+          experience, and long term brand building.
+        </section>
+
+        <nav className="section-nav" aria-label="Section links">
+          <a href="#experience">The experience</a>
+          <a href="#about">About us</a>
+          <a href="#how">How it works</a>
+          <a href="#apply">Apply today</a>
         </nav>
-        <a className="pill-button dark" href="#contact">Inquire now</a>
-      </header>
 
-      <main>
-        <section className="hero-panel">
-          <div className="hero-grid">
-            <div className="hero-copy">
-              <p className="eyebrow">Cha Cha Matcha franchise</p>
-              <h1>A premium matcha concept with cult brand energy.</h1>
-              <p className="hero-text">
-                Built for founders and operators who want a visually iconic food and beverage brand with real presence, clear positioning, and expansion potential.
-              </p>
-              <div className="hero-actions">
-                <a className="pill-button dark" href="#contact">Get franchise deck</a>
-                <a className="pill-button soft" href="#model">View opportunity</a>
-              </div>
-            </div>
-
-            <div className="hero-visual">
-              <div className="hero-card hero-card-back"></div>
-              <div className="hero-card hero-card-front">
-                <div className="hero-image-frame">
-                  <div className="hero-blob hero-blob-one"></div>
-                  <div className="hero-blob hero-blob-two"></div>
-                  <div className="cup-stack large matcha">
-                    <div className="foam"></div>
-                    <div className="straw"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <section className="panel experience" id="experience">
+          <h2>The Experience</h2>
+          <div className="experience-grid">
+            {experienceCards.map((card) => (
+              <article className="exp-card" key={card.title}>
+                <img src={card.image} alt={card.title} />
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="content-grid" id="story">
-          <article className="story-card story-main">
-            <div className="story-main-copy">
-              <p className="eyebrow">Brand premise</p>
-              <h2>Fresh, social, and unmistakably green.</h2>
+        <section className="panel about" id="about">
+          <h2>About Us</h2>
+          <div className="about-grid">
+            <article className="about-story">
+              <h3>2016 - The Beginning</h3>
               <p>
-                The page leans into a fashion aware, editorial look. Big serif headlines, soft cream space, rounded containers, and product imagery do most of the work.
+                Founded after time spent in Japan, Cha Cha Matcha opened in SoHo and introduced
+                premium Japanese matcha to a wider NYC audience.
               </p>
-            </div>
-            <div className="story-main-visual">
-              <div className="mini-scene pink-scene">
-                <div className="cup-stack strawberry small"></div>
+            </article>
+            <article className="about-photo-card">
+              <img src={aboutPhoto} alt="Cha Cha storefront sign" />
+            </article>
+            <aside className="about-tags" aria-label="Feature tags">
+              <span>About us</span>
+              <span>How it works</span>
+              <span>Apply today</span>
+              <span>Apply now</span>
+            </aside>
+          </div>
+        </section>
+
+        <section className="panel today">
+          <h2>Cha Cha Today</h2>
+          <div className="stat-grid">
+            {stats.map(([value, label]) => (
+              <div className="stat" key={value + label}>
+                <strong>{value}</strong>
+                <span>{label}</span>
               </div>
-            </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel how" id="how">
+          <div className="how-head">
+            <h2>How It Works</h2>
+            <a className="button soft" href="#apply">Apply today</a>
+          </div>
+          <div className="how-grid">
+            {processCards.map((card) => (
+              <article className="step-card" key={card.title}>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel map-wrap" id="apply">
+          <article className="map-card">
+            <img src={mapImage} alt="Map of Canada" />
           </article>
-
-          <div className="story-side-stack">
-            {featuredTiles.map((tile) => (
-              <article className="story-card story-side" key={tile.title}>
-                <h3>{tile.title}</h3>
-                <p>{tile.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="drinks-section" id="drinks">
-          <div className="section-heading center">
-            <p className="eyebrow">Signature drinks</p>
-            <h2>Product moments designed to feel shareable and premium.</h2>
-          </div>
-          <div className="drinks-grid">
-            {drinks.map((drink) => (
-              <article className={`drink-tile ${drink.theme}`} key={drink.title}>
-                <div className={`drink-scene ${drink.theme}`}>
-                  <div className={`cup-stack ${drink.theme}`}></div>
-                </div>
-                <div className="drink-copy">
-                  <p>{drink.subtitle}</p>
-                  <h3>{drink.title}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="model-section" id="model">
-          <div className="model-grid">
-            <div className="model-copy-card">
-              <p className="eyebrow">Why it works</p>
-              <h2>An aesthetic brand with a simple operating story.</h2>
-              <p>
-                The design language suggests a franchise pitch built around desirability first, then operational clarity. It feels less like a restaurant deck and more like a premium consumer brand launch.
-              </p>
-              <div className="stat-list">
-                {stats.map(([label, value]) => (
-                  <div className="stat-row" key={label}>
-                    <span>{label}</span>
-                    <strong>{value}</strong>
-                  </div>
-                ))}
+          <article className="region-card">
+            <div className="region-tabs">
+              <span className="active">US</span>
+              <span>Canada</span>
+              <span>International</span>
+            </div>
+            <dl>
+              <div>
+                <dt>4</dt>
+                <dd>Store count</dd>
               </div>
-            </div>
-
-            <div className="franchise-stack">
-              {franchiseCards.map((card) => (
-                <article className="franchise-card" key={card.number}>
-                  <span>{card.number}</span>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
+              <div>
+                <dt>4</dt>
+                <dd>Provinces</dd>
+              </div>
+              <div>
+                <dt>2</dt>
+                <dd>Countries</dd>
+              </div>
+            </dl>
+            <a className="button dark" href="#top">Apply now</a>
+          </article>
         </section>
 
-        <section className="cta-panel" id="contact">
-          <div>
-            <p className="eyebrow">Next step</p>
-            <h2>Request the franchise package and review the opportunity in detail.</h2>
-          </div>
-          <a className="pill-button dark large" href="mailto:franchise@chachamatcha.com">Request materials</a>
+        <section className="panel partner">
+          <article className="partner-copy">
+            <h2>Become a Partner with Cha Cha</h2>
+            <ul>
+              <li>US franchise opportunities</li>
+              <li>International licensing</li>
+              <li>Operational stories and conversions</li>
+            </ul>
+            <a className="button dark" href="#top">Apply now</a>
+          </article>
+          <article className="partner-media">
+            <img src={partnerPhoto} alt="Cha Cha interior" />
+            <button className="play" aria-label="Play video" type="button" />
+          </article>
         </section>
+
+        <footer className="footer">
+          <div className="footer-top">
+            <span>Growing globally with trusted local partners.</span>
+            <span>Instagram</span>
+            <span>TikTok</span>
+            <span>Facebook</span>
+          </div>
+          <img src={footerLogo} alt="Cha Cha wordmark" />
+        </footer>
       </main>
     </div>
   )
